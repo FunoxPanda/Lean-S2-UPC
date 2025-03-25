@@ -21,7 +21,7 @@ Ce cours est divisé en plusieurs chapitres. Vous trouverez ci-dessous lesdits c
 - [Appliquer des lemmes & théorèmes](02_Invoking_Lemmas.lean)
 - [Preuves de disjonctions](03_Or.lean)
 - [Preuves de conjonctions](04_And.lean)
-- [Preuves d'existance](05_Exists.lean)
+- [Preuves d'existence](05_Exists.lean)
 
 ## Preuves avec structure (partie 2)
 - [Implication pour tout objet](01_Forall_Implies.lean)
