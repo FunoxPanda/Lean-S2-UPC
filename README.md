@@ -33,4 +33,4 @@ Ce cours est divisé en plusieurs chapitres. Vous trouverez ci-dessous lesdits c
 - [Sous-cas de proposition mathématiques](02_Excluded_Middle.lean)
 
 ## Méthodes de raisonnement (Induction)
-- [Preuves par récurrence](02_Recurrence_Relations.lean)
+- [Preuves par récurrence](01_Induction.lean)
