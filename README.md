@@ -10,27 +10,51 @@ Année universaire 2024-2025, semestre 2 - Université Paris Cité
 Ce cours est divisé en plusieurs chapitres. Vous trouverez ci-dessous lesdits chapitres vus en cours.
 **Merci de signaler tout lien cassé, ce sommaire permet une navigation plus simple et claire.**
 
-## Preuves par calculs
-- [Prouver des égalités](02_Proving_Equalities_in_Lean.lean)
-- [Tips and tricks](03_Tips_and_Tricks)
-- [Prouver des inégalités](04_Proving_Inequalities.lean)
-- [Raccourcis](05_A_Shortcut)
+Les cours suivant sont triés par ordre chronologique.
 
-## Preuves avec structure (partie 1)
+### Preuves par calculs
+- [Prouver des égalités](02_Proving_Equalities_in_Lean.lean)
+- [Tips and tricks](03_Tips_and_Tricks.lean)
+- [Prouver des inégalités](04_Proving_Inequalities.lean)
+- [Raccourcis](05_A_Shortcut.lean)
+
+### Preuves avec structure (partie 1)
 - [Utiliser des étapes intermédiaires](01_Intermediate_Steps.lean)
 - [Appliquer des lemmes & théorèmes](02_Invoking_Lemmas.lean)
 - [Preuves de disjonctions](03_Or.lean)
 - [Preuves de conjonctions](04_And.lean)
 - [Preuves d'existence](05_Exists.lean)
 
-## Preuves avec structure (partie 2)
+### Preuves avec structure (partie 2)
 - [Implication pour tout objet](01_Forall_Implies.lean)
 - [Relation d'équivalence (ssi.)](02_Iff.lean)
 - [Contradiction d'hypothèses](04_Contradictory_Hypotheses.lean)
 - [Preuves par contradiction](05_Proofs_by_Contradiction.lean)
 
-## Logique
+### Logique
 - [Sous-cas de proposition mathématiques](02_Excluded_Middle.lean)
 
-## Méthodes de raisonnement (Induction)
+### Méthodes de raisonnement (Induction)
 - [Preuves par récurrence](01_Induction.lean)
+
+# Tactiques
+- ``sorry`` : quand on ne sait pas, ou que Lean ne fonctionne pas
+- ``calc`` : faire un calcul
+- ``ring`` : faire calcul littéral
+- ``rw[hypothese]`` : remplacer une hypothèse connue
+- ``apply [lemme]`` : appeler un [lemme](lemmes.lean)
+- ``numbers`` : faire une relation entre nombres (calcul ou relation d'ordre)
+- ``extra`` : rappeler à Lean qu'un carré est positif *(à vérifier)*
+- ``addarith`` : faire une opération algébrique rapide (y+2=-4 alors y=-2)
+- ``have [nom] : [hypothese] := by [tactique]`` : créer une nouvelle hypothèse
+- ``obtain hx | hy := [hypothese]`` : découper une hypothèse avec un "ou" ou un "et" en deux
+- ``constructor`` : diviser un objectif avec un "ou", "ssi" ou un "et" en deux
+- ``intro [var]`` : introduire une variable d'un "quelque soit"
+- ``assumption`` : rappeler à Lean qu'on a déjà ce qu'on attend dans les hypothèses
+- ``cancel [var] at [hypothese]`` : simplifier par [var] l'énoncé
+- ``use [nombre]`` : mettre en avant un témoin existentiel *(pratique pour montrer un il existe)*
+- ``contradiction`` : rappeler à Lean qu'on a deux **hypothèses** contradictoires
+- ``interval_cases`` : ***ne sait pas, à revoir***
+- ``by_cases`` : vérifier les deux cas d'une proposition (P et non P)
+- ``simple_induction n with k IH`` : démarrer une récurrence pour n >= 0
+- ``induction_from_starting_point n, hn with k hk IH`` : démarrer une récurrence pour n à partir de n >= ?? *(?? = hypothèse)*
