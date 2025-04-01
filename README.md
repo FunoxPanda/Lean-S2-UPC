@@ -61,10 +61,10 @@ Les cours suivant sont triés par ordre chronologique.
 - ``by_cases`` : vérifier les deux cas d'une proposition (P et non P)
 - ``simple_induction n with k IH`` : démarrer une récurrence pour n >= 0
 - ``induction_from_starting_point n, hn with k hk IH`` : démarrer une récurrence pour n à partir de n >= ?? *(?? = hypothèse)*
-**(New, 1er avril 🐟)** - ``def [nom de la fonction] (x : ℝ) : ℝ := [valeur de f(x)]`` : définir une fonction
-**(New, 1er avril 🐟)** - ``dsimp [définition]`` : met la définion en hypothèse **(dans notre cas: Injective, Surjective)**fonction
-**(New, 1er avril 🐟)** - ``dsimp [définition] at [hypothese]`` : met la définion dans l'hypothèse **(dans notre cas: expliciter ``f(x)``)**
-**(New, 1er avril 🐟)** - ``pushneg ([hypothese])`` : développe la négation dans l'énoncé de l'hypothèse _(si non spécifiée, dans toutes)_
+- **(New, 1er avril 🐟)** ``def [nom de la fonction] (x : ℝ) : ℝ := [valeur de f(x)]`` : définir une fonction
+- **(New, 1er avril 🐟)** ``dsimp [définition]`` : met la définion en hypothèse **(dans notre cas: Injective, Surjective)**fonction
+- **(New, 1er avril 🐟)** ``dsimp [définition] at [hypothese]`` : met la définion dans l'hypothèse **(dans notre cas: expliciter ``f(x)``)**
+- **(New, 1er avril 🐟)** ``pushneg ([hypothese])`` : développe la négation dans l'énoncé de l'hypothèse _(si non spécifiée, dans toutes)_
   
   # Autres et utile
 
