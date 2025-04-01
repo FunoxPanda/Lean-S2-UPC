@@ -64,7 +64,7 @@ Les cours suivant sont triés par ordre chronologique.
 - **(New 🐟)**  ``def [nom de la fonction] (x : ℝ) : ℝ := [valeur de f(x)]`` : définir une fonction
 - **(New 🐟)**  ``dsimp [définition]`` : met la définion en hypothèse **(dans notre cas: Injective, Surjective)**fonction
 - **(New 🐟)**  ``dsimp [définition] at [hypothese]`` : met la définion dans l'hypothèse **(dans notre cas: expliciter ``f(x)``)**
-- **(New 🐟)**  ``pushneg ([hypothese])`` : développe la négation dans l'énoncé de l'hypothèse _(si non spécifiée, dans toutes)_
+- **(New 🐟)**  ``push_neg`` : développe la négation *logique* dans les hypothèses
 
 # Autres et utile
 
