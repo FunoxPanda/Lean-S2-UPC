@@ -1,6 +1,6 @@
 # Introduction
 
-Il s'agit de mon travail relatif au cours **Démontrer avec un ordinateur** visant à présenter une première approche de Lean. Le cours est réalisé par *Ricardo Brasca*. 
+Il s'agit de mon travail relatif au cours **Démontrer avec un ordinateur** visant à présenter une première approche de Lean. Le cours est réalisé par *Riccardo Brasca*. 
 
 Tous droits réservés à l'Université Paris Cité.
 Année universaire 2024-2025, semestre 2 - Université Paris Cité
