@@ -62,13 +62,15 @@ Les cours suivant sont triés par ordre chronologique.
 - ``simple_induction n with k IH`` : démarrer une récurrence pour n >= 0
 - ``induction_from_starting_point n, hn with k hk IH`` : démarrer une récurrence pour n à partir de n >= ?? *(?? = hypothèse)*
 - **(New 🐟)**  ``def [nom de la fonction] (x : ℝ) : ℝ := [valeur de f(x)]`` : définir une fonction
-- **(New 🐟)**  ``dsimp [définition]`` : met la définion en hypothèse **(dans notre cas: Injective, Surjective)**fonction
+- **(New 🐟)**  ``dsimp [définition]`` : met la définion en hypothèse **(dans notre cas: Injective, Surjective)**
 - **(New 🐟)**  ``dsimp [définition] at [hypothese]`` : met la définion dans l'hypothèse **(dans notre cas: expliciter ``f(x)``)**
 - **(New 🐟)**  ``push_neg`` : développe la négation *logique* dans les hypothèses
 
-# Autres et utile
+# Autres et utile (New 🐟)
 
-Si on ne veut pas nommer une fonction, on peut faire une syntaxe dans ce style :
+1. Si on ne veut pas nommer une fonction, on peut faire une syntaxe dans ce style :
 ```lean
-example : ¬Injective(fun x : ℝ ↦ x^2)
+example : ¬Injective(fun x : ℝ ↦ x^2) -- rest of the proof
 ```
+
+2. On pourra utiliser deux définitions : Injective et Surjective _(qui sont les définitions mathématiques de ce que l'on veut démontrer)_
