@@ -37,9 +37,12 @@ Les cours suivant sont triés par ordre chronologique.
 ### Méthodes de raisonnement (Induction)
 - [Preuves par récurrence](01_Induction.lean)
 
+### Fonctions
+- [Fonctions injectives et surjectives](01_Injective_Surjective.lean)
+
 # Tactiques
-- ``sorry`` : quand on ne sait pas, ou que Lean ne fonctionne pas
-- ``calc`` : faire un calcul
+- ``sorry`` : quand on ne sait pas, ou que Lean ne fonctionne pas _(ce qui arrive souvent visiblement)_
+- ``calc`` : faire un calcul _(i.e. débuter une sous-preuve)_
 - ``ring`` : faire calcul littéral
 - ``rw[hypothese]`` : remplacer une hypothèse connue
 - ``apply [lemme]`` : appeler un [lemme](lemmes.lean)
@@ -49,7 +52,7 @@ Les cours suivant sont triés par ordre chronologique.
 - ``have [nom] : [hypothese] := by [tactique]`` : créer une nouvelle hypothèse
 - ``obtain hx | hy := [hypothese]`` : découper une hypothèse avec un "ou" ou un "et" en deux
 - ``constructor`` : diviser un objectif avec un "ou", "ssi" ou un "et" en deux
-- ``intro [var]`` : introduire une variable d'un "quelque soit"
+- ``intro [var]`` : introduire une variable d'un "quelque soit" *(si var est une hypothèse, il suppose que l'hypothèse est vraie)*
 - ``assumption`` : rappeler à Lean qu'on a déjà ce qu'on attend dans les hypothèses
 - ``cancel [var] at [hypothese]`` : simplifier par [var] l'énoncé
 - ``use [nombre]`` : mettre en avant un témoin existentiel *(pratique pour montrer un il existe)*
@@ -58,3 +61,14 @@ Les cours suivant sont triés par ordre chronologique.
 - ``by_cases`` : vérifier les deux cas d'une proposition (P et non P)
 - ``simple_induction n with k IH`` : démarrer une récurrence pour n >= 0
 - ``induction_from_starting_point n, hn with k hk IH`` : démarrer une récurrence pour n à partir de n >= ?? *(?? = hypothèse)*
+**(New, 1er avril 🐟)** - ``def [nom de la fonction] (x : ℝ) : ℝ := [valeur de f(x)]`` : définir une fonction
+**(New, 1er avril 🐟)** - ``dsimp [définition]`` : met la définion en hypothèse **(dans notre cas: Injective, Surjective)**fonction
+**(New, 1er avril 🐟)** - ``dsimp [définition] at [hypothese]`` : met la définion dans l'hypothèse **(dans notre cas: expliciter ``f(x)``)**
+**(New, 1er avril 🐟)** - ``pushneg ([hypothese])`` : développe la négation dans l'énoncé de l'hypothèse _(si non spécifiée, dans toutes)_
+  
+  # Autres et utile
+
+  Si on ne veut pas nommer une fonction, on peut faire une syntaxe dans ce style :
+  ```lean
+  example : ¬Injective(fun x : ℝ ↦ x^2)
+  ```
