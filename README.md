@@ -37,7 +37,7 @@ Les cours suivant sont triés par ordre chronologique.
 ### Méthodes de raisonnement (Induction)
 - [Preuves par récurrence](01_Induction.lean)
 
-### Fonctions
+### Fonctions
 - [Fonctions injectives et surjectives](01_Injective_Surjective.lean)
 
 # Tactiques
