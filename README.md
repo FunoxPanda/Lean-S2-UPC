@@ -65,6 +65,8 @@ Les cours suivant sont triés par ordre chronologique.
 - **(New 🐟)**  ``dsimp [définition]`` : met la définion en hypothèse **(dans notre cas: Injective, Surjective)**
 - **(New 🐟)**  ``dsimp [définition] at [hypothese]`` : met la définion dans l'hypothèse **(dans notre cas: expliciter ``f(x)``)**
 - **(New 🐟)**  ``push_neg`` : développe la négation *logique* dans les hypothèses
+- **(New 🐟)**  ``ext [var]`` : Nouvel objectif : 2 fonctions sont égales <=> elles sont égales en tous points
+- **(New 🐟)**  ``rw [comp_apply]`` remplace ``g◦f(x)`` par ``g(f(x))``
 
 # Autres et utile (New 🐟)
 
