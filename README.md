@@ -58,7 +58,7 @@ Les cours suivant sont triés par ordre chronologique.
 - ``cancel [var] at [hypothese]`` : simplifier par [var] l'énoncé
 - ``use [nombre]`` : mettre en avant un témoin existentiel *(pratique pour montrer un il existe)*
 - ``contradiction`` : rappeler à Lean qu'on a deux **hypothèses** contradictoires
-- ``interval_cases`` : ***ne sait pas, à revoir***
+- ``interval_cases`` : tester toutes les valeurs de x si x est coincé dans un intervalle **(ssi. x est dans N ou Z)**
 - ``by_cases`` : vérifier les deux cas d'une proposition (P et non P)
 - ``simple_induction n with k IH`` : démarrer une récurrence pour n >= 0
 - ``induction_from_starting_point n, hn with k hk IH`` : démarrer une récurrence pour n à partir de n >= ?? *(?? = hypothèse)*
