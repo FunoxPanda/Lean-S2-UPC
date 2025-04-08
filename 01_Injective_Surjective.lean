@@ -180,22 +180,65 @@ example : ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + 1) :
   assumption
   done
 
+example : ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + 1) := by
+  intro f hf
+  dsimp[Injective]
+  intro x y
+  intro hf2
+  apply hf
+  addarith[hf2]
+  done
+
 /-example : ¬ ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + 1) := by
   sorry
   done-/
 
+
 example : ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + x) := by
   sorry
   done
+
+
 example : ¬ ∀ (f : ℚ → ℚ), Injective f → Injective (fun x ↦ f x + x) := by
-  sorry
+  push_neg
+  dsimp[Injective]
+  use (fun x ↦ -x)
+  constructor
+  · intro x y H
+    addarith[H]
+  · push_neg
+    use 1
+    use 2
+    constructor
+    · numbers
+    · numbers
   done
+
 
 example : ∀ (f : ℤ → ℤ), Surjective f → Surjective (fun x ↦ 2 * f x) := by
   sorry
   done
+
 example : ¬ ∀ (f : ℤ → ℤ), Surjective f → Surjective (fun x ↦ 2 * f x) := by
-  sorry
+  dsimp[Surjective]
+  push_neg
+  use (fun x ↦ x)
+  constructor
+  · intro b
+    use b
+    ring
+  · use 1
+    intro x
+    have h := le_or_succ_le x 0
+    obtain h | h := h
+    · apply ne_of_lt
+      calc
+        2*x ≤ 2*0 := by rel[h]
+        _ < 1 := by numbers
+    · apply ne_of_gt
+      calc
+        2*x ≥ 2*1 := by rel[h]
+        _ > 1 := by numbers
   done
 
 example : ∀ c : ℝ, Surjective (fun x ↦ c * x) := by
@@ -208,7 +251,10 @@ example : ¬ ∀ c : ℝ, Surjective (fun x ↦ c * x) := by
 -- Tous les énoncés à partir d'ici sont vrais. Vous pouvez les prouver.
 
 example (f : X → Y) : Injective f ↔ ∀ x1 x2 : X, x1 ≠ x2 → f x1 ≠ f x2 := by
-  sorry
+  constructor
+  dsimp[Injective]
+  · intro H
+
   done
 
 example {f : ℚ → ℚ} (hf : ∀ x y, x < y → f x < f y) : Injective f := by

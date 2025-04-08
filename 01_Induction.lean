@@ -58,8 +58,8 @@ example : ∃ (k : ℕ), ∀ n > k, 3 ^ n ≥ 2 ^ n + 100 := by
   · calc
       (3:ℕ)^(k+1) = 3^k * 3 := by ring
       _ ≥ (2^k + 100) * 3 := by rel[IH]
-      sorry
-  done
+    sorry
+
 
 example {a : ℝ} (ha : -1 ≤ a) (n : ℕ) : (1 + a) ^ n ≥ 1 + n * a := by
   sorry
@@ -68,11 +68,31 @@ example {a : ℝ} (ha : -1 ≤ a) (n : ℕ) : (1 + a) ^ n ≥ 1 + n * a := by
 -- À partir d'ici on ne peut pas utiliser la subtraction, les variable sont dans `ℕ`!
 
 example (n : ℕ) : 3 ^ n ≥ n ^ 2 + n + 1 := by
-  sorry
+  simple_induction n with n HR
+  · numbers
+  · calc
+      (3:ℕ)^(n+1) = 3*3^n := by ring
+      _ ≥ 3*(n ^ 2 + n + 1) := by rel[HR]
+      _ = 3*n^2+3*n+3 := by ring
+      _ = (n+1)^2+(n+1)+1+2*n^2 := by ring
+      _ ≥ (n+1)^2+(n+1)+1 := by extra
   done
 
 example : ∃ (k : ℕ), ∀ n > k, 2 ^ n ≥ n ^ 2 := by
-  sorry
+  use 3
+  intro n hn
+  induction_from_starting_point n, hn with k hk IH
+  · calc
+      2 ^ succ 3 = 2^4 := by numbers
+      _ ≥ 4^2 := by numbers
+  · calc 2 ^ (k + 1) = 2 * 2 ^ k := by ring
+      _ ≥ 2 * k ^ 2 := by rel [IH]
+      _ = k ^ 2 + k*k := by ring
+      _ ≥ k ^ 2 + 4*k := by rel [hk]
+      _ = k^2+2*k+2*k := by ring
+      _ ≥ k^2+2*k+2*4 := by rel [hk]
+      _ = (k+1)^2+7 := by ring
+      _ ≥ (k+1)^2 := by extra
   done
 
 example : ∃ (k : ℕ), ∀ n > k, 2 ^ n ≥ n ^ 3 := by

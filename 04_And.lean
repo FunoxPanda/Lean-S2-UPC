@@ -108,8 +108,15 @@ example {a : ℚ} (h : a - 1 ≥ 5) : a ≥ 6 ∧ 3 * a ≥ 10 := by
 example {x y : ℚ} (h : x + y = 5 ∧ x + 2 * y = 7) : x = 3 ∧ y = 2 := by
   obtain ⟨h1, h2⟩ := h
   constructor
+  · have h1 : y = 5-x := by addarith[h1]
+    have h2 : -x + 10 = 7 := by calc
+      -x + 10 = x + 2 * (5-x) := by ring
+      _ = x+2*y := by rw[h1]
+      _ = 7 := by rw[h2]
+
+    addarith[h2]
   · sorry
-  · sorry
+
   done
 
 example {a b : ℝ} (h1 : a * b = a) (h2 : a * b = b) :
