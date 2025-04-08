@@ -44,6 +44,7 @@ Les cours suivant sont triés par ordre chronologique.
 - ``sorry`` : quand on ne sait pas, ou que Lean ne fonctionne pas _(ce qui arrive souvent visiblement)_
 - ``calc`` : faire un calcul _(i.e. débuter une sous-preuve)_
 - ``ring`` : faire calcul littéral
+- ``rel[hypothese]`` : remplacer une relation d'ordre (<, <= et réciproques) connue
 - ``rw[hypothese]`` : remplacer une hypothèse connue
 - ``apply [lemme]`` : appeler un [lemme](lemmes.lean)
 - ``numbers`` : faire une relation entre nombres (calcul ou relation d'ordre)
